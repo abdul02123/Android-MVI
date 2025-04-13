@@ -3,7 +3,7 @@ package com.android.androidmvi.core
 import com.android.androidmvi.util.ErrorResponse
 import retrofit2.Response
 
-sealed class Resource<T>(val data: T?= null, message:String?= null, errorResponse: ErrorResponse?= null) {
+sealed class Resource<T>(val data: T?= null, val message:String?= null, val errorResponse: ErrorResponse?= null) {
 
     class Success<T>(data: T?): Resource<T>(data)
     class Error<T>(message: String?, errorResponse: ErrorResponse?): Resource<T>(message = message, errorResponse = errorResponse)
